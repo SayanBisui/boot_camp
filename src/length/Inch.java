@@ -1,14 +1,10 @@
 package length;
 
-public class Inch {
+public class Inch implements Unit{
     private double measurement;
 
     protected Inch(double measurement) {
         this.measurement = measurement;
-    }
-
-    public Millimeter convertToMillimeter(){
-        return new Millimeter(this.measurement*25);
     }
 
     @Override
@@ -26,5 +22,10 @@ public class Inch {
     public int hashCode() {
         long temp = Double.doubleToLongBits(measurement);
         return (int) (temp ^ (temp >>> 32));
+    }
+
+    @Override
+    public Millimeter convertToBaseUnit() {
+        return new Millimeter(this.measurement*25);
     }
 }

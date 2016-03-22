@@ -1,13 +1,15 @@
 package length;
 
-public class Centimeter {
+public class Centimeter implements Unit {
     private double measurement;
 
     public Centimeter(double measurement) {
         this.measurement = measurement;
     }
 
-   public Millimeter convertToMillimeter(){
-       return new Millimeter(this.measurement*10);
-   }
+
+//    @Override
+    public Millimeter convertToBaseUnit() {
+        return new Millimeter(this.measurement*10);
+    }
 }

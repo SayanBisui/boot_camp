@@ -1,6 +1,6 @@
 package length;
 
-public class Millimeter {
+public class Millimeter implements Unit {
     private double measurement;
 
     public Millimeter(double measurement) {
@@ -24,7 +24,12 @@ public class Millimeter {
         return (int) (temp ^ (temp >>> 32));
     }
 
+    @Override
+    public Unit convertToBaseUnit() {
+        return new Millimeter(this.measurement);
+    }
+
     public double add(Millimeter secondLength) {
-        return (this.measurement + secondLength.measurement);
+        return this.measurement + secondLength.measurement;
     }
 }

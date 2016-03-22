@@ -1,6 +1,6 @@
 package length;
 
-public class Liter {
+public class Liter implements Unit {
     private double volume;
 
     public Liter(double volume) {
@@ -22,5 +22,11 @@ public class Liter {
     public int hashCode() {
         long temp = Double.doubleToLongBits(volume);
         return (int) (temp ^ (temp >>> 32));
+    }
+
+
+    @Override
+    public Liter convertToBaseUnit() {
+        return new Liter(this.volume);
     }
 }

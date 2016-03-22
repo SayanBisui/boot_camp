@@ -1,16 +1,19 @@
 package length;
 
-public class MathematicalOperator {
+public class MathematicalOperator implements AddUnit{
 
-   public boolean compareLengths(Millimeter firstLength, Millimeter secondLength){
-       return firstLength.equals(secondLength);
-   }
+    public boolean compareTwoUnit(Unit firstUnit, Unit secondUnit){
+        return firstUnit.convertToBaseUnit().equals(secondUnit.convertToBaseUnit());
 
-    public boolean compareVolume(Liter firstVolume, Liter secondVolume) {
-        return firstVolume.equals(secondVolume);
     }
 
-    public Inch addLengths(Millimeter firstLength, Millimeter secondLength){
-        return new Inch(firstLength.add(secondLength)/25);
+//    @Override
+//    public Inch addLengths(Millimeter firstLength, Millimeter secondLength){
+//        return new Inch(firstLength.convertToBaseUnit().add(secondLength.convertToBaseUnit())/25);
+//    }
+
+    @Override
+    public double addLengths() {
+        return 0;
     }
 }

@@ -1,14 +1,14 @@
 package length;
 
-public class Feet {
+public class Feet implements Unit{
     private double measurement;
 
     protected Feet(double measurement) {
-
         this.measurement = measurement;
-    };
+    }
 
-    public Millimeter convertToMilimeter(){
+    @Override
+    public Millimeter convertToBaseUnit() {
         return new Millimeter(this.measurement*300);
     }
 }
